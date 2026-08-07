@@ -1,0 +1,90 @@
+CREATE DATABASE konser_db;
+
+USE konser_db;
+
+CREATE TABLE admins(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('admin') DEFAULT 'admin',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO admins(name,email,password)
+VALUES(
+'Administrator',
+'admin@gmail.com',
+'$2b$10$KLCeL6iGQSMJ27HVBc0qseHn7PKTFhMz6qjjtfuojmvShojGriL7.'
+);
+
+CREATE TABLE tickets(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    concert_name VARCHAR(100) NOT NULL,
+    artist VARCHAR(100) NOT NULL,
+    venue VARCHAR(100) NOT NULL,
+    concert_date DATE NOT NULL,
+    ticket_type VARCHAR(50) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    stock INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE transactions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_name VARCHAR(100) NOT NULL,
+    customer_email VARCHAR(100) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+
+    ticket_id INT NOT NULL,
+
+    quantity INT NOT NULL,
+
+    total_price DECIMAL(12,2) NOT NULL,
+
+    payment_method ENUM(
+        'Transfer Bank',
+        'E-Wallet',
+        'QRIS',
+        'Cash'
+    ) NOT NULL,
+
+    payment_status ENUM(
+        'Pending',
+        'Paid',
+        'Cancelled'
+    ) DEFAULT 'Pending',
+
+    transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY(ticket_id)
+    REFERENCES tickets(id)
+    ON DELETE CASCADE
+);
+
+INSERT INTO transactions
+(
+customer_name,
+customer_email,
+phone,
+ticket_id,
+quantity,
+total_price,
+payment_method
+)
+
+VALUES
+(
+'Dillan Junior',
+'dillan@gmail.com',
+'08123456789',
+1,
+2,
+9000000,
+'Transfer Bank'
+);	
+
+SELECT * FROM tickets;	
+SELECT * FROM transactions;
+
+DROP DATABASE konser_db;
