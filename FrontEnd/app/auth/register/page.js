@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function register() {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-[#474747] via-[#3b3b3b] to-[#0e0e0e] bg-[length:400%_400%] animate-gradient-move p-4">
-            <div className="flex flex-col items-center justify-center w-full max-w-[450px] mx-auto my-[2%] p-8 pb-10 bg-[#474747] opacity-90 text-white rounded-[10px] text-[20px] shadow-2xl">
+            <div className="flex flex-col items-center justify-center w-full max-w-[450px] mx-auto my-[2%] p-8 pb-10 bg-[#474747] opacity-90 text-white rounded-[10px] text-[20px] shadow-2xl sora">
                 <Link href="/" className="text-white no-underline mb-5 text-[16px] self-start transition-colors duration-300 hover:text-[#ccc]">&larr; Back</Link>
                 
                 <h1 className="text-white no-underline mb-[30px] font-bold text-4xl">Register</h1>

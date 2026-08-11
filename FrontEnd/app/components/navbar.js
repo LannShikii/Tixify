@@ -7,7 +7,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#6666] text-white shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-100 bg-[#3b3b3b] text-white shadow-lg">
       <div className="mx-auto flex h-20 items-center justify-between px-6">
 
         {/* Logo */}
@@ -37,14 +37,6 @@ export default function Navbar() {
               Dashboard
             </Link>
           </li>
-
-          <li>
-            <Link
-              href="/store" className="transition hover:text-blue-100">
-              Store
-            </Link>
-          </li>
-
           {/* Dropdown */}
           <li className="group relative">
 
@@ -56,7 +48,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/why-us" className="block px-4 py-3 hover:bg-white hover:text-[#262626]">
-                  Why Us
+                  Detail  
                 </Link>
               </li>
 
@@ -75,6 +67,12 @@ export default function Navbar() {
               </li>
             </ul>
 
+          </li>
+          <li>
+            <Link
+              href="/download" className="transition hover:text-blue-100">
+              Download
+            </Link>
           </li>
 
           {/* Login */}
