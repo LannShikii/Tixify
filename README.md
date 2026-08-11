@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Poppins&size=32&duration=3000&pause=800&color=F72585&center=true&vCenter=true&width=600&lines=🎟️+TIXIFY;Concert+Ticketing+Admin+Dashboard;Kelola+Tiket+Konsermu+dengan+Mudah" alt="Typing SVG" />
+<h1>STOP BOKUR MANTEMAN</h1>
 
 <br/>
 
